@@ -35,4 +35,33 @@ class Logic {
         }
         return isPlayerTurn
     }
+    
+    func appendToPlayerArray(isPlayerTurn: Array<Bool>, index: Int) {
+        if isPlayerTurn[0] {
+            if (player1Array?.append(index)) == nil {
+                player1Array = [index]
+            }
+        } else {
+            if (player2Array?.append(index)) == nil {
+                player2Array = [index]
+            }
+        }
+    }
+    
+    func checkWinner(playerArray: Array<Int>) -> Bool{
+        if playerArray.count < 3 {
+            return false
+        } else {
+            for winCondition in winConditions {
+                if winCondition.allSatisfy(playerArray.contains) {
+                    return true
+                }
+            }
+        }
+        return false
+    }
+    
+    func endGame() {
+        
+    }
 }
