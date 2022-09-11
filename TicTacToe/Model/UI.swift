@@ -28,4 +28,10 @@ class UI {
         }
         return "Error"
     }
+    
+    func disableAllButtons(array: Array<UIButton>) {
+        for item in array {
+            item.isUserInteractionEnabled = false
+        }
+    }
 }

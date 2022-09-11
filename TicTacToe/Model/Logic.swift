@@ -1,16 +1,12 @@
-//
-//  Logic.swift
-//  TicTacToe
-//
-//  Created by Saiman Chen on 2022-09-07.
-//
-
 import Foundation
 import UIKit
 
 class Logic {
     
     var isTapped: Array<Bool> = [false, false, false, false, false, false, false, false, false]
+    
+    var isPlayerTurn: Array<Bool>?
+    
     var player1Array: Array<Int>?
     var player2Array: Array<Int>?
     
@@ -24,6 +20,7 @@ class Logic {
         [0, 4, 8],
         [2, 4, 6]
     ]
+    var hasWon: Bool = false
 
     func toggleTurn(isPlayerTurn: Array<Bool>) -> Array<Bool> {
         var isPlayerTurn = isPlayerTurn
@@ -59,6 +56,18 @@ class Logic {
             }
         }
         return false
+    }
+    
+    func checkDraw() {
+        var count = 0
+        for tapped in isTapped {
+            if tapped == true {
+                count += 1
+            }
+        }
+        if count == 9 && !hasWon {
+            print("Draw")
+        }
     }
     
     func endGame() {
