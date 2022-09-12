@@ -3,12 +3,16 @@ import UIKit
 
 class Logic {
     
+    var isGameStarted = false
+    
+    var hasWon: Bool = false
+    
     var isTapped: Array<Bool> = [false, false, false, false, false, false, false, false, false]
     
     var isPlayerTurn: Array<Bool>?
     
-    var player1Array: Array<Int>?
-    var player2Array: Array<Int>?
+    var player1Array: Array<Int> = []
+    var player2Array: Array<Int> = []
     
     var winConditions: Array<Array<Int>> = [
         [0, 1, 2],
@@ -20,7 +24,6 @@ class Logic {
         [0, 4, 8],
         [2, 4, 6]
     ]
-    var hasWon: Bool = false
 
     func toggleTurn(isPlayerTurn: Array<Bool>) -> Array<Bool> {
         var isPlayerTurn = isPlayerTurn
@@ -35,13 +38,9 @@ class Logic {
     
     func appendToPlayerArray(isPlayerTurn: Array<Bool>, index: Int) {
         if isPlayerTurn[0] {
-            if (player1Array?.append(index)) == nil {
-                player1Array = [index]
-            }
+            player1Array.append(index)
         } else {
-            if (player2Array?.append(index)) == nil {
-                player2Array = [index]
-            }
+            player2Array.append(index)
         }
     }
     
@@ -70,7 +69,16 @@ class Logic {
         }
     }
     
-    func endGame() {
-        
+    func onReset() {
+        isTapped = [false, false, false, false, false, false, false, false, false]
+        player1Array = []
+        player2Array = []
+        hasWon = false
+        isGameStarted = false
+        print(isTapped)
     }
+    
+//    func updateScore(player1: Player, player2: Player) -> Int {
+//
+//    }
 }

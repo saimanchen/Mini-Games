@@ -1,10 +1,3 @@
-//
-//  File.swift
-//  MiniGames
-//
-//  Created by Saiman Chen on 2022-09-07.
-//
-
 import Foundation
 import UIKit
 
@@ -29,9 +22,21 @@ class UI {
         return "Error"
     }
     
-    func disableAllButtons(array: Array<UIButton>) {
-        for item in array {
-            item.isUserInteractionEnabled = false
+    func disableAllButtons(UIButtons: Array<UIButton>) {
+        for button in UIButtons {
+            button.isUserInteractionEnabled = false
+        }
+    }
+    
+    func enableAllButtons(UIButtons: Array<UIButton>) {
+        for button in UIButtons {
+            button.isUserInteractionEnabled = true
+        }
+    }
+    
+    func onReset(UIButtons: Array<UIButton>) {
+        for button in UIButtons {
+            button.setImage(UIImage(named: "blank.png"), for: .normal)
         }
     }
 }

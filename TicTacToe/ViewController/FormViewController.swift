@@ -27,8 +27,8 @@ class FormViewController: UIViewController {
                 tfPlayer2.text = "Player 2"
             }
             
-            destinationVC.receivingPlayer1 = Player(name: tfPlayer1.text ?? "Player 1", isTurn: true)
-            destinationVC.receivingPlayer2 = Player(name: tfPlayer2.text ?? "Player 2", isTurn: false)
+            destinationVC.receivingPlayer1 = Player(name: tfPlayer1.text ?? "Player 1", isTurn: true, isWinner: false, score: 0)
+            destinationVC.receivingPlayer2 = Player(name: tfPlayer2.text ?? "Player 2", isTurn: false, isWinner: false, score: 0)
         }
     }
 }

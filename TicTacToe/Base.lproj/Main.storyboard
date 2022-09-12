@@ -163,7 +163,6 @@
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5f7-2q-Fan" userLabel="img0">
                                         <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
                                         <constraints>
-                                            <constraint firstAttribute="width" constant="100" id="5fP-R7-IR7"/>
                                             <constraint firstAttribute="width" secondItem="5f7-2q-Fan" secondAttribute="height" multiplier="1:1" id="6vd-Y2-zYS"/>
                                             <constraint firstAttribute="height" constant="100" id="fY6-gN-aAx"/>
                                         </constraints>
@@ -176,7 +175,6 @@
                                     <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HZo-fL-5Hr" userLabel="img1">
                                         <rect key="frame" x="110" y="0.0" width="100" height="100"/>
                                         <constraints>
-                                            <constraint firstAttribute="width" constant="100" id="TNo-cZ-NYx"/>
                                             <constraint firstAttribute="height" constant="100" id="kJG-cP-Dqz"/>
                                         </constraints>
                                         <state key="normal" title="Button"/>
@@ -188,7 +186,6 @@
                                     <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dgd-eZ-Xb9" userLabel="img2">
                                         <rect key="frame" x="220" y="0.0" width="100" height="100"/>
                                         <constraints>
-                                            <constraint firstAttribute="width" constant="100" id="t8O-ia-Hpo"/>
                                             <constraint firstAttribute="height" constant="100" id="xAr-Eh-IqX"/>
                                         </constraints>
                                         <state key="normal" title="Button"/>
@@ -210,7 +207,6 @@
                                         <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="100" id="UbF-8b-ZSK"/>
-                                            <constraint firstAttribute="width" constant="100" id="jPS-4O-hzI"/>
                                             <constraint firstAttribute="width" secondItem="cdM-ig-t4s" secondAttribute="height" multiplier="1:1" id="n5M-vl-DRD"/>
                                         </constraints>
                                         <state key="normal" title="Button"/>
@@ -223,7 +219,6 @@
                                         <rect key="frame" x="110" y="0.0" width="100" height="100"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="icX-Jq-TE9" secondAttribute="height" multiplier="1:1" id="L3M-eU-G44"/>
-                                            <constraint firstAttribute="width" constant="100" id="bJX-gT-6zu"/>
                                             <constraint firstAttribute="height" constant="100" id="bXG-3P-Okd"/>
                                         </constraints>
                                         <state key="normal" title="Button"/>
@@ -236,7 +231,6 @@
                                         <rect key="frame" x="220" y="0.0" width="100" height="100"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="100" id="K8E-oz-R2l"/>
-                                            <constraint firstAttribute="width" constant="100" id="b7J-E6-N2j"/>
                                         </constraints>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="plain" image="blank"/>
@@ -255,7 +249,6 @@
                                     <button opaque="NO" tag="6" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FGC-Tt-O6Q" userLabel="img6">
                                         <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
                                         <constraints>
-                                            <constraint firstAttribute="width" constant="100" id="G47-vB-Kg6"/>
                                             <constraint firstAttribute="height" constant="100" id="aQC-Qe-Y2s"/>
                                             <constraint firstAttribute="width" secondItem="FGC-Tt-O6Q" secondAttribute="height" multiplier="1:1" id="mUi-CS-UAZ"/>
                                         </constraints>
@@ -269,7 +262,6 @@
                                         <rect key="frame" x="110" y="0.0" width="100" height="100"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="100" id="Cc7-eD-Qpm"/>
-                                            <constraint firstAttribute="width" constant="100" id="nqs-kN-vES"/>
                                         </constraints>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="plain" image="blank"/>
@@ -281,7 +273,6 @@
                                         <rect key="frame" x="220" y="0.0" width="100" height="100"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="100" id="Ff4-lN-8RX"/>
-                                            <constraint firstAttribute="width" constant="100" id="vGL-4W-fq6"/>
                                         </constraints>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="plain" image="blank"/>
@@ -295,12 +286,6 @@
                                     <constraint firstItem="KCs-Wo-gDh" firstAttribute="width" secondItem="KCs-Wo-gDh" secondAttribute="height" multiplier="1:1" id="rpC-5H-Oar"/>
                                 </constraints>
                             </stackView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Turn to play:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="utC-rq-8hd">
-                                <rect key="frame" x="112" y="94" width="166" height="38.333333333333343"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="32"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="PlayerName" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5fG-Rt-Kci">
                                 <rect key="frame" x="91.666666666666671" y="142.33333333333334" width="206.66666666666663" height="48"/>
                                 <constraints>
@@ -310,12 +295,28 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Turn to play:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="utC-rq-8hd">
+                                <rect key="frame" x="112" y="94" width="166" height="38.333333333333343"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="32"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="x84-MP-ZB2">
+                                <rect key="frame" x="164.66666666666666" y="625" width="60.666666666666657" height="31"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Reset"/>
+                                <connections>
+                                    <action selector="onResetPlayAgain:" destination="XV2-Bn-6Ug" eventType="touchUpInside" id="ww1-Ub-nKg"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="DkS-l6-10I"/>
                         <color key="backgroundColor" systemColor="systemOrangeColor"/>
                         <constraints>
+                            <constraint firstItem="x84-MP-ZB2" firstAttribute="top" secondItem="MaC-zb-T1d" secondAttribute="bottom" constant="70" id="0Pv-Ia-meK"/>
                             <constraint firstItem="xQI-tZ-Nrm" firstAttribute="centerY" secondItem="DIt-1S-VMp" secondAttribute="centerY" id="4Xy-az-ST9"/>
                             <constraint firstItem="5fG-Rt-Kci" firstAttribute="top" secondItem="utC-rq-8hd" secondAttribute="bottom" constant="10" id="9IC-rr-beM"/>
+                            <constraint firstItem="x84-MP-ZB2" firstAttribute="centerX" secondItem="DIt-1S-VMp" secondAttribute="centerX" id="9W3-in-gTr"/>
                             <constraint firstItem="MaC-zb-T1d" firstAttribute="centerX" secondItem="DIt-1S-VMp" secondAttribute="centerX" id="HzU-WF-EOA"/>
                             <constraint firstItem="utC-rq-8hd" firstAttribute="top" secondItem="DkS-l6-10I" secondAttribute="top" constant="50" id="Z04-dr-s3S"/>
                             <constraint firstItem="xQI-tZ-Nrm" firstAttribute="centerX" secondItem="DIt-1S-VMp" secondAttribute="centerX" id="rCC-70-ENt"/>
@@ -328,6 +329,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="Czx-3c-KGE"/>
                     <connections>
+                        <outlet property="btnResetPlayAgain" destination="x84-MP-ZB2" id="ycj-7A-zMX"/>
                         <outlet property="lblName" destination="5fG-Rt-Kci" id="hvg-4a-BzQ"/>
                         <outletCollection property="imgButtons" destination="5f7-2q-Fan" collectionClass="NSMutableArray" id="BTb-vn-0Tp"/>
                         <outletCollection property="imgButtons" destination="HZo-fL-5Hr" collectionClass="NSMutableArray" id="lMn-45-X2Y"/>
