@@ -2,8 +2,8 @@ import UIKit
 
 class TTTViewController: UIViewController {
     
-    var receivingPlayer1: Player?
-    var receivingPlayer2: Player?
+    var receivingName1: String?
+    var receivingName2: String?
     
     var logic: Logic = Logic()
     var ui: UI = UI()
@@ -43,17 +43,17 @@ class TTTViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        logic.isPlayerTurn = [receivingPlayer1?.isTurn ?? false, receivingPlayer2?.isTurn ?? false]
-        lblName.text = receivingPlayer1?.name
-        lblPlayer1Name.text = receivingPlayer1?.name
-        lblPlayer2Name.text = receivingPlayer2?.name
+        logic.isPlayerTurn = [logic.player1.isTurn, logic.player2.isTurn]
+        lblName.text = receivingName1
+        lblPlayer1Name.text = receivingName1
+        lblPlayer2Name.text = receivingName2
     }
     
     // this function calls all the methods
     func gamePlay(tag: Int) {
-        if let isPlayerTurn = logic.isPlayerTurn,
-           let receivingPlayer1 = receivingPlayer1,
-           let receivingPlayer2 = receivingPlayer2 {
+//        if let isPlayerTurn = logic.isPlayerTurn,
+        if let receivingName1 = receivingName1,
+           let receivingName2 = receivingName2 {
             
             logic.isGameStarted = true
             
@@ -62,10 +62,10 @@ class TTTViewController: UIViewController {
 
             }
             
-            imgButtons[tag].setImage(ui.getImage(isPlayerTurn: isPlayerTurn), for: .normal)
-            logic.isPlayerTurn = logic.toggleTurn(isPlayerTurn: isPlayerTurn)
-            lblName.text = ui.getPlayerName(isPlayerTurn: isPlayerTurn, name1: receivingPlayer1.name, name2: receivingPlayer2.name)
-            logic.appendToPlayerArray(isPlayerTurn: isPlayerTurn, index: tag)
+            imgButtons[tag].setImage(ui.getImage(isPlayerTurn: logic.isPlayerTurn), for: .normal)
+            logic.isPlayerTurn = logic.toggleTurn(isPlayerTurn: logic.isPlayerTurn)
+            lblName.text = ui.getPlayerName(isPlayerTurn: logic.isPlayerTurn, name1: receivingName1, name2: receivingName2)
+            logic.appendToPlayerArray(isPlayerTurn: logic.isPlayerTurn, index: tag)
             
             if logic.isTapped[tag] == false {
                 logic.isTapped[tag] = true
@@ -74,7 +74,7 @@ class TTTViewController: UIViewController {
                 imgButtons[tag].isUserInteractionEnabled = false
             }
             
-            if isPlayerTurn[0] {
+            if logic.isPlayerTurn[0] {
                 logic.hasWon = logic.checkWinner(playerArray: logic.player1Array)
             } else {
                 logic.hasWon = logic.checkWinner(playerArray: logic.player2Array)
@@ -82,6 +82,9 @@ class TTTViewController: UIViewController {
             
             if logic.hasWon {
                 ui.disableAllButtons(UIButtons: imgButtons)
+                logic.updateScore()
+                lblPlayer1Score.text = String(logic.player1.score)
+                lblPlayer2Score.text = String(logic.player2.score)
             }
             
             logic.checkDraw()

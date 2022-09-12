@@ -2,6 +2,8 @@ import Foundation
 import UIKit
 
 class Logic {
+    var player1: Player = Player(name: "", isTurn: true, score: 0)
+    var player2: Player = Player(name: "", isTurn: false, score: 0)
     
     var isGameStarted = false
     
@@ -9,7 +11,7 @@ class Logic {
     
     var isTapped: Array<Bool> = [false, false, false, false, false, false, false, false, false]
     
-    var isPlayerTurn: Array<Bool>?
+    var isPlayerTurn: Array<Bool> = [false, false]
     
     var player1Array: Array<Int> = []
     var player2Array: Array<Int> = []
@@ -75,10 +77,15 @@ class Logic {
         player2Array = []
         hasWon = false
         isGameStarted = false
-        print(isTapped)
     }
     
-//    func updateScore(player1: Player, player2: Player) -> Int {
-//
-//    }
+    func updateScore() {
+        if isPlayerTurn[0] {
+            player2.score += 1
+            print(player1)
+        } else {
+            player1.score += 1
+            print(player2)
+        }
+    }
 }
