@@ -10,6 +10,10 @@ class TTTViewController: UIViewController {
     
     
     @IBOutlet weak var lblName: UILabel!
+    @IBOutlet weak var lblPlayer1Name: UILabel!
+    @IBOutlet weak var lblPlayer2Name: UILabel!
+    @IBOutlet weak var lblPlayer1Score: UILabel!
+    @IBOutlet weak var lblPlayer2Score: UILabel!
     @IBOutlet weak var btnResetPlayAgain: UIButton!
     
     // Image buttons
@@ -41,6 +45,8 @@ class TTTViewController: UIViewController {
         super.viewDidLoad()
         logic.isPlayerTurn = [receivingPlayer1?.isTurn ?? false, receivingPlayer2?.isTurn ?? false]
         lblName.text = receivingPlayer1?.name
+        lblPlayer1Name.text = receivingPlayer1?.name
+        lblPlayer2Name.text = receivingPlayer2?.name
     }
     
     // this function calls all the methods
