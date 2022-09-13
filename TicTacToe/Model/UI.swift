@@ -15,9 +15,9 @@ class UI {
     
     func getPlayerName(isPlayerTurn: Array<Bool>, name1: String, name2: String) -> String {
         if isPlayerTurn[0] {
-            return name2
-        } else if isPlayerTurn[1] {
             return name1
+        } else if isPlayerTurn[1] {
+            return name2
         }
         return "Error"
     }

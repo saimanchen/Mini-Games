@@ -11,7 +11,7 @@ class Logic {
     
     var isTapped: Array<Bool> = [false, false, false, false, false, false, false, false, false]
     
-    var isPlayerTurn: Array<Bool> = [false, false]
+    var isPlayerTurn: Array<Bool> = [true, false]
     
     var player1Array: Array<Int> = []
     var player2Array: Array<Int> = []
@@ -82,10 +82,8 @@ class Logic {
     func updateScore() {
         if isPlayerTurn[0] {
             player2.score += 1
-            print(player1)
         } else {
             player1.score += 1
-            print(player2)
         }
     }
 }

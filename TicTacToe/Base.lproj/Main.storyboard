@@ -17,25 +17,106 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="t7b-Vv-aG8">
-                                <rect key="frame" x="146.66666666666666" y="629" width="97" height="31"/>
+                                <rect key="frame" x="146.33333333333334" y="629" width="97.333333333333343" height="31"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="filled" title="Tic Tac Toe"/>
                                 <connections>
-                                    <segue destination="0Y5-9N-ffQ" kind="show" identifier="mainToPlayerNames" id="7kC-Se-aZ0"/>
+                                    <action selector="btnTTT:" destination="BYZ-38-t0r" eventType="touchUpInside" id="cbS-aq-wc6"/>
                                 </connections>
                             </button>
+                            <stackView hidden="YES" opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="anr-eb-2ij">
+                                <rect key="frame" x="70" y="680" width="250" height="31"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IMV-ht-rEB">
+                                        <rect key="frame" x="0.0" y="0.0" width="120" height="31"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="filled" title="2 Players"/>
+                                        <connections>
+                                            <segue destination="0Y5-9N-ffQ" kind="show" id="KZN-4u-xRv"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hvk-xA-Rhx">
+                                        <rect key="frame" x="130" y="0.0" width="120" height="31"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="filled" title="vs Computer"/>
+                                        <connections>
+                                            <segue destination="S4y-7x-MLN" kind="show" id="Zgp-Ej-paW"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="anr-eb-2ij" secondAttribute="trailing" constant="70" id="Xcf-g4-XkZ"/>
+                            <constraint firstItem="anr-eb-2ij" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="70" id="b4k-Su-9c9"/>
+                            <constraint firstItem="anr-eb-2ij" firstAttribute="top" secondItem="t7b-Vv-aG8" secondAttribute="bottom" constant="20" id="gJw-sA-5SX"/>
                             <constraint firstItem="t7b-Vv-aG8" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="ib6-if-ek2"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="t7b-Vv-aG8" secondAttribute="bottom" constant="150" id="sXQ-4T-3FA"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="stackTTT" destination="anr-eb-2ij" id="IpG-HA-8k8"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-1157" y="65"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="44c-PQ-zRg">
+            <objects>
+                <viewController id="S4y-7x-MLN" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="nZC-Xn-omW" customClass="TTTFormViewController">
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="790"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="8tb-fY-iKW">
+                                <rect key="frame" x="179" y="378" width="32" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kmc-xj-pdt">
+                                <rect key="frame" x="50" y="604" width="290" height="31"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="Play"/>
+                                <connections>
+                                    <segue destination="XV2-Bn-6Ug" kind="show" identifier="TTTComputerToTTTSegue" id="Rzj-4h-GeY"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="VS" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yu0-M8-Ye3">
+                                <rect key="frame" x="184" y="462" width="22" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Computer" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kdb-nD-Z23">
+                                <rect key="frame" x="156.66666666666666" y="533" width="77" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="nKZ-Dy-Kat"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="kdb-nD-Z23" firstAttribute="top" secondItem="yu0-M8-Ye3" secondAttribute="bottom" constant="50" id="2R6-pq-oHo"/>
+                            <constraint firstItem="kdb-nD-Z23" firstAttribute="centerX" secondItem="nZC-Xn-omW" secondAttribute="centerX" id="588-IH-4GK"/>
+                            <constraint firstItem="kmc-xj-pdt" firstAttribute="top" secondItem="kdb-nD-Z23" secondAttribute="bottom" constant="50" id="7dB-fk-RpE"/>
+                            <constraint firstItem="8tb-fY-iKW" firstAttribute="centerX" secondItem="nZC-Xn-omW" secondAttribute="centerX" id="dYr-hH-Ry0"/>
+                            <constraint firstItem="kmc-xj-pdt" firstAttribute="leading" secondItem="nKZ-Dy-Kat" secondAttribute="leading" constant="50" id="iNL-dx-y7G"/>
+                            <constraint firstItem="8tb-fY-iKW" firstAttribute="centerY" secondItem="nZC-Xn-omW" secondAttribute="centerY" id="mOi-4d-xLH"/>
+                            <constraint firstItem="yu0-M8-Ye3" firstAttribute="centerX" secondItem="nZC-Xn-omW" secondAttribute="centerX" id="oqX-td-hoc"/>
+                            <constraint firstItem="nKZ-Dy-Kat" firstAttribute="trailing" secondItem="kmc-xj-pdt" secondAttribute="trailing" constant="50" id="tA9-uc-Kcf"/>
+                            <constraint firstItem="yu0-M8-Ye3" firstAttribute="top" secondItem="8tb-fY-iKW" secondAttribute="bottom" constant="50" id="yqZ-JI-b1P"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="asz-h3-oSt"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="LNu-hT-4fL" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-354" y="373"/>
         </scene>
         <!--Form View Controller-->
         <scene sceneID="7ce-z8-dYr">
@@ -104,7 +185,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="deT-QT-m4u" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-238" y="65"/>
+            <point key="canvasLocation" x="-355" y="-350"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="utH-ML-O8X">
@@ -393,9 +474,12 @@
                     </constraints>
                 </stackView>
             </objects>
-            <point key="canvasLocation" x="750.76923076923072" y="95.97156398104265"/>
+            <point key="canvasLocation" x="702" y="65"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="Rzj-4h-GeY"/>
+    </inferredMetricsTieBreakers>
     <resources>
         <image name="blank" width="100" height="100"/>
         <systemColor name="systemBackgroundColor">

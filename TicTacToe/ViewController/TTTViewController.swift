@@ -44,6 +44,7 @@ class TTTViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         logic.isPlayerTurn = [logic.player1.isTurn, logic.player2.isTurn]
+        print(logic.isPlayerTurn)
         lblName.text = receivingName1
         lblPlayer1Name.text = receivingName1
         lblPlayer2Name.text = receivingName2
@@ -64,6 +65,7 @@ class TTTViewController: UIViewController {
             
             imgButtons[tag].setImage(ui.getImage(isPlayerTurn: logic.isPlayerTurn), for: .normal)
             logic.isPlayerTurn = logic.toggleTurn(isPlayerTurn: logic.isPlayerTurn)
+            print(logic.isPlayerTurn)
             lblName.text = ui.getPlayerName(isPlayerTurn: logic.isPlayerTurn, name1: receivingName1, name2: receivingName2)
             logic.appendToPlayerArray(isPlayerTurn: logic.isPlayerTurn, index: tag)
             

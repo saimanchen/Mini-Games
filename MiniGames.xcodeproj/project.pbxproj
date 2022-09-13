@@ -21,6 +21,7 @@
 		33022FCB28C7895C00B155E8 /* FormViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33022FCA28C7895C00B155E8 /* FormViewController.swift */; };
 		33022FCD28C89BC800B155E8 /* Logic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33022FCC28C89BC800B155E8 /* Logic.swift */; };
 		33022FCF28C8CADC00B155E8 /* UI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33022FCE28C8CADC00B155E8 /* UI.swift */; };
+		3361C7AD28D081F40027B717 /* TTTComputerFormViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3361C7AC28D081F40027B717 /* TTTComputerFormViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -59,6 +60,7 @@
 		33022FCA28C7895C00B155E8 /* FormViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormViewController.swift; sourceTree = "<group>"; };
 		33022FCC28C89BC800B155E8 /* Logic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Logic.swift; sourceTree = "<group>"; };
 		33022FCE28C8CADC00B155E8 /* UI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UI.swift; sourceTree = "<group>"; };
+		3361C7AC28D081F40027B717 /* TTTComputerFormViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TTTComputerFormViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -152,6 +154,7 @@
 			isa = PBXGroup;
 			children = (
 				33022F9828C75EB900B155E8 /* ViewController.swift */,
+				3361C7AC28D081F40027B717 /* TTTComputerFormViewController.swift */,
 				33022FC428C75FD100B155E8 /* TTTViewController.swift */,
 				33022FCA28C7895C00B155E8 /* FormViewController.swift */,
 			);
@@ -297,6 +300,7 @@
 				33022FCF28C8CADC00B155E8 /* UI.swift in Sources */,
 				33022FC928C7839B00B155E8 /* Player.swift in Sources */,
 				33022F9728C75EB900B155E8 /* SceneDelegate.swift in Sources */,
+				3361C7AD28D081F40027B717 /* TTTComputerFormViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
