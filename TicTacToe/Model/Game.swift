@@ -2,8 +2,6 @@ import Foundation
 import UIKit
 
 class Game {
-    // var player1: Player = Player(name: "", isTurn: true, score: 0)
-    // var player2: Player = Player(name: "", isTurn: false, score: 0)
     var computer: Player
     
     var player1: Player
@@ -37,10 +35,15 @@ class Game {
         [2, 4, 6]
     ]
     
-    
-    // LOGICAL METHODS
-    func computerTurn() {
+    // COMPUTER
+    func computerTurn() -> Int {
+        if hasWon { return -1 }
         
+        let randomInt = getRandomInt()
+        if isTapped[randomInt] == false {
+            return randomInt
+        }
+        return computerTurn()
     }
     
     func getRandomInt() -> Int {
@@ -48,6 +51,7 @@ class Game {
         return randomInt
     }
 
+    // GAME LOGIC METHODS
     func toggleTurn(isPlayerTurn: Array<Bool>) -> Array<Bool> {
         var isPlayerTurn = isPlayerTurn
         
@@ -65,6 +69,8 @@ class Game {
         } else {
             player2Array.append(index)
         }
+        print(player1Array)
+        print(player2Array)
     }
     
     func checkIfWon(playerArray: Array<Int>) -> Bool{
@@ -99,11 +105,13 @@ class Game {
         player2Array = []
         hasWon = false
         //isGameStarted = false
+        print(isTapped)
     }
     
     func updateScore() {
         if isPlayerTurn[0] {
             player2.score += 1
+            computer.score += 1
         } else {
             player1.score += 1
         }
