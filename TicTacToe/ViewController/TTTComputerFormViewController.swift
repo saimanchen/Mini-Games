@@ -1,29 +1,24 @@
-//
-//  TTTComputerFormViewController.swift
-//  MiniGames
-//
-//  Created by Saiman Chen on 2022-09-13.
-//
-
 import UIKit
 
 class TTTComputerFormViewController: UIViewController {
-
+    @IBOutlet weak var tfPlayer1: UITextField!
+    
+    var TTTComputerToTTTSegue: String = "TTTComputerToTTTSegue"
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+        if segue.identifier == TTTComputerToTTTSegue {
+            let destinationVC = segue.destination as! TTTViewController
+            
+            if tfPlayer1.text == "" {
+                tfPlayer1.text = "Player 1"
+            }
+            
+            destinationVC.receivingName1 = tfPlayer1.text
+            destinationVC.isComputerGame = true
+        }
     }
-    */
-
 }

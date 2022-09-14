@@ -1,6 +1,6 @@
 import Foundation
 
-struct Player {
+class Player {
     var name: String
     var isTurn: Bool
     var score: Int
