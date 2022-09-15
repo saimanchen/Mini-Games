@@ -2,24 +2,22 @@ import Foundation
 import UIKit
 
 class Game {
-    var computer: Player
-    
     var player1: Player
     var player2: Player
     
-    init(player1: Player, player2: Player, computer: Player) {
+    
+    init(player1: Player, player2: Player) {
         self.player1 = player1
         self.player2 = player2
-        self.computer = computer
     }
     
+    var isPlayerTurn: Array<Bool> = [true, false]
     var isGameStarted = false
     var hasWon: Bool = false
     var isDraw = false
     
-    var isTapped: Array<Bool> = [false, false, false, false, false, false, false, false, false]
-    
-    var isPlayerTurn: Array<Bool> = [true, false]
+    //
+    var isButtonTapped: Array<Bool> = [false, false, false, false, false, false, false, false, false]
     
     var player1Array: Array<Int> = []
     var player2Array: Array<Int> = []
@@ -37,17 +35,17 @@ class Game {
     
     // COMPUTER
     func computerTurn() -> Int {
-        if hasWon { return -1 }
+        if hasWon || isDraw { return -1 }
         
         let randomInt = getRandomInt()
-        if isTapped[randomInt] == false {
+        if isButtonTapped[randomInt] == false {
             return randomInt
         }
         return computerTurn()
     }
     
     func getRandomInt() -> Int {
-        let randomInt = Int.random(in: 0..<9)
+        let randomInt = Int.random(in: 0...8)
         return randomInt
     }
 
@@ -69,8 +67,6 @@ class Game {
         } else {
             player2Array.append(index)
         }
-        print(player1Array)
-        print(player2Array)
     }
     
     func checkIfWon(playerArray: Array<Int>) -> Bool{
@@ -86,9 +82,9 @@ class Game {
         return false
     }
     
-    func checkDraw() -> Bool {
+    func checkIfDraw() -> Bool {
         var count = 0
-        for tapped in isTapped {
+        for tapped in isButtonTapped {
             if tapped == true {
                 count += 1
             }
@@ -99,68 +95,19 @@ class Game {
         return false
     }
     
-    func onReset() {
-        isTapped = [false, false, false, false, false, false, false, false, false]
+    func onGameReset() {
+        isButtonTapped = [false, false, false, false, false, false, false, false, false]
         player1Array = []
         player2Array = []
         hasWon = false
-        //isGameStarted = false
-        print(isTapped)
+        isDraw = false
     }
     
     func updateScore() {
         if isPlayerTurn[0] {
             player2.score += 1
-            computer.score += 1
         } else {
             player1.score += 1
         }
-    }
-    
-    
-    // UI METHODS
-    func getImage(isPlayerTurn: Array<Bool>) -> UIImage {
-        if isPlayerTurn[0] {
-            return UIImage(named: "circle.png") ?? UIImage(named: "blank.png")!
-        } else if isPlayerTurn[1] {
-            return UIImage(named: "square.png") ?? UIImage(named: "blank.png")!
-        }
-        return UIImage(named: "blank.png") ?? UIImage(named: "blank.png")!
-    }
-    
-    func getPlayerName(isPlayerTurn: Array<Bool>, name1: String, name2: String) -> String {
-        if isPlayerTurn[0] {
-            return name1
-        } else if isPlayerTurn[1] {
-            return name2
-        }
-        return "Error"
-    }
-    
-    func disableAllButtons(UIButtons: Array<UIButton>) {
-        for button in UIButtons {
-            button.isUserInteractionEnabled = false
-        }
-    }
-    
-    func enableAllButtons(UIButtons: Array<UIButton>) {
-        for button in UIButtons {
-            button.isUserInteractionEnabled = true
-        }
-    }
-    
-    func blankAllButtons(UIButtons: Array<UIButton>) {
-        for button in UIButtons {
-            button.setImage(UIImage(named: "blank.png"), for: .normal)
-        }
-    }
-    
-    func getWinnerName() -> Int {
-        if isPlayerTurn[0] {
-            return 1
-        } else if isPlayerTurn[1] {
-            return 0
-        }
-        return 404
     }
 }

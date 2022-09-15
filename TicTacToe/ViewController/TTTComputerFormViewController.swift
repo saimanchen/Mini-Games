@@ -18,6 +18,7 @@ class TTTComputerFormViewController: UIViewController {
             }
             
             destinationVC.receivingName1 = tfPlayer1.text
+            destinationVC.receivingName2 = "Computer"
             destinationVC.isComputerGame = true
         }
     }
