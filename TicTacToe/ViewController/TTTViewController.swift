@@ -21,6 +21,20 @@ class TTTViewController: UIViewController {
     @IBOutlet weak var lblPlayer2Score: UILabel!
     @IBOutlet weak var btnResetPlayAgain: UIButton!
     
+    override func viewDidLoad() {
+            super.viewDidLoad()
+            
+            // sets all labels with player names
+            if let receivingName1 = receivingName1,
+               let receivingName2 = receivingName2 {
+                game.player1.name = receivingName1
+                game.player2.name = receivingName2
+                lblName.text = receivingName1
+                lblPlayer1Name.text = game.player1.name
+                lblPlayer2Name.text = game.player2.name
+                if isComputerGame { game.player2.isComputer = true }
+            }
+        }
     // Image buttons
     @IBOutlet var imgButtons: [UIButton]!
     @IBAction func onPress(_ sender: UIButton?) {
@@ -55,41 +69,29 @@ class TTTViewController: UIViewController {
             
             lblTitle.text = "Turn to play:"
             lblName.text = getPlayerName(isPlayerTurn: game.isPlayerTurn, name1: receivingName1, name2: receivingName2)
+            btnResetPlayAgain.setImage(UIImage(named: "reset_game"), for: .normal)
             btnResetPlayAgain.isHidden = true
 
             game.onGameReset()
             
             // prompts the computer to make a move if computer is starting player
             if game.player2.isComputer && game.isPlayerTurn[1] {
-                timer = Timer.scheduledTimer(withTimeInterval: 1, repeats: false, block: autoPress(timer:))
+                timer = Timer.scheduledTimer(withTimeInterval: 1.2, repeats: false, block: autoPress(timer:))
             }
         }
     }
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        
-        // sets all labels with player names
-        if let receivingName1 = receivingName1,
-           let receivingName2 = receivingName2 {
-            game.player1.name = receivingName1
-            game.player2.name = receivingName2
-            lblName.text = receivingName1
-            lblPlayer1Name.text = game.player1.name
-            lblPlayer2Name.text = game.player2.name
-            if isComputerGame { game.player2.isComputer = true }
-        }
-    }
+    
     
     // this function is called when a cell is pressed
     func cellOnPress(tag: Int) {
+        
         if let receivingName1 = receivingName1,
            let receivingName2 = receivingName2 {
             
             game.isGameStarted = true
             
             if game.isGameStarted {
-                btnResetPlayAgain.setTitle("Reset game", for: .normal)
                 btnResetPlayAgain.isHidden = false;
 
             }
@@ -128,7 +130,7 @@ class TTTViewController: UIViewController {
                 game.updateScore()
                 lblPlayer1Score.text = String(game.player1.score)
                 lblPlayer2Score.text = String(game.player2.score)
-                btnResetPlayAgain.setTitle("Play again", for: .normal)
+                btnResetPlayAgain.setImage(UIImage(named: "play_again"), for: .normal)
                 game.isGameStarted = false
             }
             
@@ -137,13 +139,14 @@ class TTTViewController: UIViewController {
             if game.isDraw {
                 lblTitle.text = ""
                 lblName.text = "Draw"
-                btnResetPlayAgain.setTitle("Play again", for: .normal)
+                btnResetPlayAgain.setImage(UIImage(named: "play_again"), for: .normal)
+                disableAllCells(UIButtons: imgButtons)
                 game.isGameStarted = false
             }
             
             // prompts the computer to make a move if game is not ended
             if game.hasWon == false && game.isDraw == false && game.player2.isComputer {
-                timer = Timer.scheduledTimer(withTimeInterval: 1, repeats: false, block: autoPress(timer:))
+                timer = Timer.scheduledTimer(withTimeInterval: 1.0, repeats: false, block: autoPress(timer:))
             }
         }
     }
@@ -155,11 +158,11 @@ class TTTViewController: UIViewController {
     // functions below manipulates the UI
     func getImage(isPlayerTurn: Array<Bool>) -> UIImage {
         if game.isPlayerTurn[0] {
-            return UIImage(named: "circle.png") ?? UIImage(named: "blank.png")!
+            return UIImage(named: "TTT_circle.png") ?? UIImage(named: "blank.png")!
         } else if game.isPlayerTurn[1] {
-            return UIImage(named: "square.png") ?? UIImage(named: "blank.png")!
+            return UIImage(named: "TTT_cross.png") ?? UIImage(named: "blank.png")!
         }
-        return UIImage(named: "blank.png") ?? UIImage(named: "blank.png")!
+        return UIImage(named: "TTT_blank.png") ?? UIImage(named: "blank.png")!
     }
     
     func getPlayerName(isPlayerTurn: Array<Bool>, name1: String, name2: String) -> String {
@@ -183,18 +186,20 @@ class TTTViewController: UIViewController {
     func disableAllCells(UIButtons: Array<UIButton>) {
         for button in UIButtons {
             button.isUserInteractionEnabled = false
+            button.alpha = 0.8
         }
     }
     
     func enableAllCells(UIButtons: Array<UIButton>) {
         for button in UIButtons {
             button.isUserInteractionEnabled = true
+            button.alpha = 1.0
         }
     }
     
     func blankAllCells(UIButtons: Array<UIButton>) {
         for button in UIButtons {
-            button.setImage(UIImage(named: "blank.png"), for: .normal)
+            button.setImage(UIImage(named: "TTT_blank.png"), for: .normal)
         }
     }
 }
