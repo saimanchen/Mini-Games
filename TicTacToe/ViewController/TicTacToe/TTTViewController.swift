@@ -10,7 +10,7 @@ class TTTViewController: UIViewController {
     var receivingName2: String?
     var isComputerGame: Bool = false
     
-    var game: Game = Game(player1: Player(name: "Player 1", isTurn: true, score: 0, isComputer: false), player2: Player(name: "Player 2", isTurn: false, score: 0, isComputer: false))
+    var game: TicTacToeGame = TicTacToeGame(player1: Player(name: "Player 1", isTurn: true, score: 0, isComputer: false), player2: Player(name: "Player 2", isTurn: false, score: 0, isComputer: false))
     
     
     @IBOutlet weak var lblTitle: UILabel!

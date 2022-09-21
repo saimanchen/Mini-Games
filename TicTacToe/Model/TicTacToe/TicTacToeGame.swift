@@ -1,7 +1,7 @@
 import Foundation
 import UIKit
 
-class Game {
+class TicTacToeGame {
     var player1: Player
     var player2: Player
     
