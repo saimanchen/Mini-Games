@@ -1,18 +1,6 @@
 import UIKit
 
 class TTTViewController: UIViewController {
-    
-    // delays computer move
-    var timer: Timer?
-    
-    // values received from other view controllers
-    var receivingName1: String?
-    var receivingName2: String?
-    var isComputerGame: Bool = false
-    
-    var game: TicTacToeGame = TicTacToeGame(player1: Player(name: "Player 1", isTurn: true, score: 0, isComputer: false), player2: Player(name: "Player 2", isTurn: false, score: 0, isComputer: false))
-    
-    
     @IBOutlet weak var lblTitle: UILabel!
     @IBOutlet weak var lblName: UILabel!
     @IBOutlet weak var lblPlayer1Name: UILabel!
@@ -20,6 +8,20 @@ class TTTViewController: UIViewController {
     @IBOutlet weak var lblPlayer1Score: UILabel!
     @IBOutlet weak var lblPlayer2Score: UILabel!
     @IBOutlet weak var btnResetPlayAgain: UIButton!
+    @IBOutlet var imgButtons: [UIButton]!
+    
+    // delays computer move
+    var timer: Timer?
+    
+    // values received from TTTFormViewController
+    var receivingName1: String?
+    var receivingName2: String?
+    var isComputerGame: Bool = false
+    
+    var game: TicTacToeGame = TicTacToeGame(player1: Player(name: "Player 1", isTurn: true, score: 0, isComputer: false), player2: Player(name: "Player 2", isTurn: false, score: 0, isComputer: false))
+    
+    
+
     
     override func viewDidLoad() {
             super.viewDidLoad()
@@ -35,8 +37,7 @@ class TTTViewController: UIViewController {
                 if isComputerGame { game.player2.isComputer = true }
             }
         }
-    // Image buttons
-    @IBOutlet var imgButtons: [UIButton]!
+    
     @IBAction func onPress(_ sender: UIButton?) {
         var tag: Int?
         

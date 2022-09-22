@@ -12,6 +12,7 @@ class TTTFormViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        // styling the textFields
         tfPlayer1.layer.borderWidth = 2
         tfPlayer1.layer.borderColor = UIColor.black.cgColor
         tfPlayer2.layer.borderWidth = 2
