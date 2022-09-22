@@ -32,4 +32,17 @@ class MemoryGame {
         "memory_flower_10",
         "memory_flower_10"
     ]
+    
+    func shuffleCells() -> Array<String> {
+        for (index, _) in cellArray.enumerated() {
+            let temp = cellArray[index]
+            let random = Int.random(in: 0...19)
+
+            cellArray[index] = cellArray[random]
+            cellArray[random] = temp
+        }
+        
+        return cellArray
+    }
+    
 }

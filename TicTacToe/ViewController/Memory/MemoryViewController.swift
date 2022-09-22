@@ -24,7 +24,7 @@ class MemoryViewController: UIViewController {
     
     var game: MemoryGame = MemoryGame(player1: Player(name: "Player 1", isTurn: true, score: 0, isComputer: false), player2: Player(name: "Player 2", isTurn: false, score: 0, isComputer: false))
     
-    
+    var shuffledCellArray: Array<String> = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -37,6 +37,11 @@ class MemoryViewController: UIViewController {
             lblName.text = receivingName1
             lblPlayer1ScoreName.text = game.player1.name
             lblPlayer2ScoreName.text = game.player2.name
+            
+//            shuffledCellArray = game.cellArray.shuffled()
+            
+            shuffledCellArray = game.shuffleCells()
+            
         }
     }
     
@@ -55,7 +60,7 @@ class MemoryViewController: UIViewController {
     }
     
     func getImage(tag: Int) -> UIImage {
-        let image = game.cellArray[tag]
+        let image = self.shuffledCellArray[tag]
         return UIImage(named: image) ?? UIImage(named: "blank.png")!
     }
 }
