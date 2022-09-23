@@ -165,8 +165,8 @@
 		331689D928DB48AA00893B56 /* TicTacToe */ = {
 			isa = PBXGroup;
 			children = (
-				33022FC428C75FD100B155E8 /* TTTViewController.swift */,
 				33022FCA28C7895C00B155E8 /* TTTFormViewController.swift */,
+				33022FC428C75FD100B155E8 /* TTTViewController.swift */,
 			);
 			path = TicTacToe;
 			sourceTree = "<group>";

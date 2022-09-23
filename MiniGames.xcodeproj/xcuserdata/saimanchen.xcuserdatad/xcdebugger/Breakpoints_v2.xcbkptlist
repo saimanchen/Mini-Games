@@ -14,10 +14,102 @@
             filePath = "TicTacToe/ViewController/Memory/MemoryViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "14"
-            endingLineNumber = "14"
+            startingLineNumber = "13"
+            endingLineNumber = "13"
             landmarkName = "MemoryViewController"
             landmarkType = "3">
+            <Locations>
+               <Location
+                  uuid = "D838576D-BD7B-41C8-AD48-A41D3951AAA1 - 3f00dbffb1f915ca"
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "MiniGames.MemoryViewController.UIButtons.getter : Swift.Optional&lt;Swift.Array&lt;__C.UIButton&gt;&gt;"
+                  moduleName = "MiniGames"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/saimanchen/Documents/STI/IOS/Playground/TicTacToe/TicTacToe/ViewController/Memory/MemoryViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "13"
+                  endingLineNumber = "13"
+                  offsetFromSymbolStart = "88">
+               </Location>
+               <Location
+                  uuid = "D838576D-BD7B-41C8-AD48-A41D3951AAA1 - a7e738ebf91ec1c6"
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "MiniGames.MemoryViewController.UIButtons.setter : Swift.Optional&lt;Swift.Array&lt;__C.UIButton&gt;&gt;"
+                  moduleName = "MiniGames"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/saimanchen/Documents/STI/IOS/Playground/TicTacToe/TicTacToe/ViewController/Memory/MemoryViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "13"
+                  endingLineNumber = "13"
+                  offsetFromSymbolStart = "108">
+               </Location>
+               <Location
+                  uuid = "D838576D-BD7B-41C8-AD48-A41D3951AAA1 - 2b351561e52e92f5"
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "MiniGames.MemoryViewController.UIButtons.modify : Swift.Optional&lt;Swift.Array&lt;__C.UIButton&gt;&gt;"
+                  moduleName = "MiniGames"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/saimanchen/Documents/STI/IOS/Playground/TicTacToe/TicTacToe/ViewController/Memory/MemoryViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "13"
+                  endingLineNumber = "13"
+                  offsetFromSymbolStart = "0">
+               </Location>
+               <Location
+                  uuid = "D838576D-BD7B-41C8-AD48-A41D3951AAA1 - ce9233b3828baa50"
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "MiniGames.MemoryViewController.UIButtons.modify : Swift.Optional&lt;Swift.Array&lt;__C.UIButton&gt;&gt; with unmangled suffix &quot;.resume.0&quot;"
+                  moduleName = "MiniGames"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/saimanchen/Documents/STI/IOS/Playground/TicTacToe/TicTacToe/ViewController/Memory/MemoryViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "13"
+                  endingLineNumber = "13"
+                  offsetFromSymbolStart = "16">
+               </Location>
+               <Location
+                  uuid = "D838576D-BD7B-41C8-AD48-A41D3951AAA1 - e8730099789b470"
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "MiniGames.MemoryViewController.init(nibName: Swift.Optional&lt;Swift.String&gt;, bundle: Swift.Optional&lt;__C.NSBundle&gt;) -&gt; MiniGames.MemoryViewController"
+                  moduleName = "MiniGames"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/saimanchen/Documents/STI/IOS/Playground/TicTacToe/TicTacToe/ViewController/Memory/MemoryViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "13"
+                  endingLineNumber = "13"
+                  offsetFromSymbolStart = "508">
+               </Location>
+               <Location
+                  uuid = "D838576D-BD7B-41C8-AD48-A41D3951AAA1 - 290bd5a8cb43bb4b"
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "MiniGames.MemoryViewController.init(coder: __C.NSCoder) -&gt; Swift.Optional&lt;MiniGames.MemoryViewController&gt;"
+                  moduleName = "MiniGames"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/saimanchen/Documents/STI/IOS/Playground/TicTacToe/TicTacToe/ViewController/Memory/MemoryViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "13"
+                  endingLineNumber = "13"
+                  offsetFromSymbolStart = "484">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

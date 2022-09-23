@@ -2,7 +2,6 @@ import UIKit
 
 class MemoryViewController: UIViewController {
     
-    
     @IBOutlet weak var lblTitle: UILabel!
     @IBOutlet weak var lblName: UILabel!
     @IBOutlet weak var lblPlayer1ScoreName: UILabel!
@@ -11,6 +10,7 @@ class MemoryViewController: UIViewController {
     @IBOutlet weak var lblPlayer2Pairs: UILabel!
     @IBOutlet weak var lblPlayer1Score: UILabel!
     @IBOutlet weak var lblPlayer2Score: UILabel!
+    @IBOutlet weak var btnResetPlayAgain: UIButton!
     @IBOutlet var UIButtons: [UIButton]!
     
     // values received from MemoryFormViewController
@@ -24,7 +24,6 @@ class MemoryViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         // sets all labels with player names
         if let receivingName1 = receivingName1,
            let receivingName2 = receivingName2 {
@@ -33,7 +32,7 @@ class MemoryViewController: UIViewController {
             lblName.text = game.player1.name
             lblPlayer1ScoreName.text = game.player1.name
             lblPlayer2ScoreName.text = game.player2.name
-            
+
             shuffledCellArray = game.shuffleCells()
         }
     }
@@ -45,7 +44,18 @@ class MemoryViewController: UIViewController {
     }
     
     @IBAction func btnResetPlayAgain(_ sender: Any) {
-        print("hello reset")
+        resetAllButtons()
+        shuffledCellArray = game.shuffleCells()
+        game.isGameStarted = false
+        game.matchingPairs = 0
+        game.player1MatchingPairs = 0
+        game.player2MatchingPairs = 0
+        game.chosenCells = []
+        game.firstTag = nil
+        lblTitle.text = "Turn to play:"
+        lblName.text = getPlayerName(isPlayerTurn: game.isPlayerTurn, name1: game.player1.name, name2: game.player2.name)
+        lblPlayer1Pairs.text = String(game.player1MatchingPairs)
+        lblPlayer2Pairs.text = String(game.player2MatchingPairs)
     }
     
     func cellOnPress(tag: Int) {
@@ -76,31 +86,12 @@ class MemoryViewController: UIViewController {
         } else if !game.isAMatch && game.chosenCells.count == 2 {
             delayTimerToggleBack(firstTag: game.firstTag ?? -1, tag: tag)
             game.chosenCells = []
-            game.isPlayerTurn = game.toggleTurn(isPlayerTurn: game.isPlayerTurn)
+            game.isPlayerTurn = game.switchTurn(isPlayerTurn: game.isPlayerTurn)
             delayTimerChangeName()
         }
         
         if game.matchingPairs == 10 {
-            game.isGameEnded = true
-            let result = game.checkWinnerDraw()
-            
-            
-            switch result {
-            case 1:
-                lblTitle.text = "Winner:"
-                lblName.text = game.player1.name
-                break
-            case 2:
-                lblTitle.text = "Winner:"
-                lblName.text = game.player2.name
-                break
-            case 3:
-                lblTitle.text = ""
-                lblName.text = "Draw"
-                break
-            default: break
-            }
-            print(result)
+            endGame()
         }
     }
     
@@ -138,5 +129,37 @@ class MemoryViewController: UIViewController {
             return name2
         }
         return "Error"
+    }
+    
+    func endGame() {
+        let result = game.checkWinnerDraw()
+        
+        switch result {
+        case 1:
+            lblTitle.text = "Winner:"
+            lblName.text = game.player1.name
+            break
+        case 2:
+            lblTitle.text = "Winner:"
+            lblName.text = game.player2.name
+            break
+        case 3:
+            lblTitle.text = ""
+            lblName.text = "Draw"
+            break
+        default: break
+        }
+        
+        game.updatePlayerScore(result: result)
+        lblPlayer1Score.text = String(game.player1.score)
+        lblPlayer2Score.text = String(game.player2.score)
+        btnResetPlayAgain.setImage(UIImage(named: "play_again"), for: .normal)
+    }
+    
+    func resetAllButtons() {
+        for button in UIButtons {
+            button.isUserInteractionEnabled = true
+            button.setImage(UIImage(named: "memory_blank"), for: .normal)
+        }
     }
 }

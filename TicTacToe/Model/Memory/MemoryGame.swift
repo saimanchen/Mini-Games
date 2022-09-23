@@ -12,13 +12,10 @@ class MemoryGame {
     var player1MatchingPairs: Int = 0
     var player2MatchingPairs: Int = 0
     var matchingPairs: Int = 0
-    
     var isPlayerTurn: Array<Bool> = [true, false]
     var chosenCells: Array<String> = []
     var firstTag: Int?
-    var turnCount: Int = 0
     var isGameStarted: Bool = false
-    var isGameEnded: Bool = false
     var isAMatch: Bool = false
     
     var cellArray: Array<String> = [
@@ -56,15 +53,13 @@ class MemoryGame {
         return cellArray
     }
     
-    func toggleTurn(isPlayerTurn: Array<Bool>) -> Array<Bool> {
+    func switchTurn(isPlayerTurn: Array<Bool>) -> Array<Bool> {
         var isPlayerTurn = isPlayerTurn
         
         if isPlayerTurn[0] {
             isPlayerTurn = [false, true]
-            turnCount = 0
         } else if isPlayerTurn[1] {
             isPlayerTurn = [true, false]
-            turnCount = 0
         }
         return isPlayerTurn
     }
@@ -95,5 +90,18 @@ class MemoryGame {
             return 2
         }
         return 3
+    }
+    
+    func updatePlayerScore(result: Int) {
+        switch result {
+        case 1:
+            player1.score += 1
+            break
+        case 2:
+            player2.score += 1
+            break
+        default:
+            break
+        }
     }
 }

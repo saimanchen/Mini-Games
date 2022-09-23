@@ -850,6 +850,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="dgj-mb-ic1"/>
                     <connections>
+                        <outlet property="btnResetPlayAgain" destination="aGd-09-1xy" id="Uc8-BU-47O"/>
                         <outlet property="lblName" destination="YfJ-j6-VgW" id="hHg-Az-xfX"/>
                         <outlet property="lblPlayer1Pairs" destination="hAZ-4F-0Jc" id="uhA-cI-Tfl"/>
                         <outlet property="lblPlayer1Score" destination="0LE-aO-SVp" id="e84-It-W8h"/>
