@@ -2,6 +2,7 @@ import UIKit
 
 class MemoryViewController: UIViewController {
     
+    
     @IBOutlet weak var lblTitle: UILabel!
     @IBOutlet weak var lblName: UILabel!
     @IBOutlet weak var lblPlayer1ScoreName: UILabel!
@@ -23,7 +24,7 @@ class MemoryViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         // sets all labels with player names
         if let receivingName1 = receivingName1,
            let receivingName2 = receivingName2 {
@@ -45,10 +46,9 @@ class MemoryViewController: UIViewController {
     
     @IBAction func btnResetPlayAgain(_ sender: Any) {
         print("hello reset")
-        }
+    }
     
     func cellOnPress(tag: Int) {
-        
         if game.chosenCells.count == 0 {
             game.firstTag = tag
         }
@@ -63,21 +63,44 @@ class MemoryViewController: UIViewController {
         if game.chosenCells.count == 2 {
             game.isAMatch = game.isAMatch(array: game.chosenCells)
         }
-
+        
         if game.isAMatch && game.chosenCells.count == 2 {
-            print("isAMatch")
             UIButtons[tag].isUserInteractionEnabled = false
             UIButtons[game.firstTag ?? -1].isUserInteractionEnabled = false
             game.chosenCells = []
-            game.isAMatch = false
             game.updatePlayerPairs(isPlayerTurn: game.isPlayerTurn)
-            lblPlayer1Pairs.text = String(game.player1Pairs)
-            lblPlayer2Pairs.text = String(game.player2Pairs)
+            lblPlayer1Pairs.text = String(game.player1MatchingPairs)
+            lblPlayer2Pairs.text = String(game.player2MatchingPairs)
+            game.updateMatchingPairs()
+            game.isAMatch = false
         } else if !game.isAMatch && game.chosenCells.count == 2 {
-            delayTimer(firstTag: game.firstTag ?? -1, tag: tag)
+            delayTimerToggleBack(firstTag: game.firstTag ?? -1, tag: tag)
             game.chosenCells = []
             game.isPlayerTurn = game.toggleTurn(isPlayerTurn: game.isPlayerTurn)
-            lblName.text = getPlayerName(isPlayerTurn: game.isPlayerTurn, name1: game.player1.name, name2: game.player2.name)
+            delayTimerChangeName()
+        }
+        
+        if game.matchingPairs == 10 {
+            game.isGameEnded = true
+            let result = game.checkWinnerDraw()
+            
+            
+            switch result {
+            case 1:
+                lblTitle.text = "Winner:"
+                lblName.text = game.player1.name
+                break
+            case 2:
+                lblTitle.text = "Winner:"
+                lblName.text = game.player2.name
+                break
+            case 3:
+                lblTitle.text = ""
+                lblName.text = "Draw"
+                break
+            default: break
+            }
+            print(result)
         }
     }
     
@@ -86,13 +109,21 @@ class MemoryViewController: UIViewController {
         return UIImage(named: image) ?? UIImage(named: "memory_blank")!
     }
     
-    func delayTimer(firstTag: Int, tag: Int) {
+    func delayTimerToggleBack(firstTag: Int, tag: Int) {
         _ = Timer.scheduledTimer(
             withTimeInterval: 1,
             repeats: false
         ) { timer in
             self.toggleBackToBlank(firstTag: firstTag, tag: tag)
-            }
+        }
+    }
+    
+    func delayTimerChangeName() {
+        _ = Timer.scheduledTimer(
+            withTimeInterval: 1,
+            repeats: false
+        ) { timer in
+            self.lblName.text = self.getPlayerName(isPlayerTurn: self.game.isPlayerTurn, name1: self.game.player1.name, name2: self.game.player2.name)        }
     }
     
     func toggleBackToBlank(firstTag: Int, tag: Int) {

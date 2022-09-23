@@ -857,7 +857,7 @@
                         <outlet property="lblPlayer2Pairs" destination="29P-a9-Rba" id="SDP-iU-mPX"/>
                         <outlet property="lblPlayer2Score" destination="4no-j2-xK5" id="da4-V5-4jl"/>
                         <outlet property="lblPlayer2ScoreName" destination="ch1-Cg-Kcr" id="y4n-Jy-4Tl"/>
-                        <outlet property="lblTitle" destination="YfJ-j6-VgW" id="VHn-kY-ymo"/>
+                        <outlet property="lblTitle" destination="T4J-7S-K5X" id="MQT-py-QM9"/>
                         <outletCollection property="UIButtons" destination="K3D-nr-rpQ" collectionClass="NSMutableArray" id="E8t-rJ-jLZ"/>
                         <outletCollection property="UIButtons" destination="bUK-aI-KBq" collectionClass="NSMutableArray" id="zhk-hO-nii"/>
                         <outletCollection property="UIButtons" destination="3c6-5d-v98" collectionClass="NSMutableArray" id="A2c-NV-3SA"/>

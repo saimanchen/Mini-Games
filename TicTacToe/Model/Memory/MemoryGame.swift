@@ -9,17 +9,17 @@ class MemoryGame {
         self.player2 = player2
     }
     
-    var player1Pairs: Int = 0
-    var player2Pairs: Int = 0
+    var player1MatchingPairs: Int = 0
+    var player2MatchingPairs: Int = 0
+    var matchingPairs: Int = 0
     
     var isPlayerTurn: Array<Bool> = [true, false]
     var chosenCells: Array<String> = []
     var firstTag: Int?
     var turnCount: Int = 0
-    var isGameStarted = false
-    var isAMatch = false
-    var hasWon: Bool = false
-    var isDraw = false
+    var isGameStarted: Bool = false
+    var isGameEnded: Bool = false
+    var isAMatch: Bool = false
     
     var cellArray: Array<String> = [
         "memory_flower_1",
@@ -78,9 +78,22 @@ class MemoryGame {
     
     func updatePlayerPairs(isPlayerTurn: Array<Bool>) {
         if isPlayerTurn[0] {
-            player1Pairs += 1
+            player1MatchingPairs += 1
         } else {
-            player2Pairs += 1
+            player2MatchingPairs += 1
         }
+    }
+    
+    func updateMatchingPairs() {
+        matchingPairs += 1
+    }
+    
+    func checkWinnerDraw() -> Int {
+        if player1MatchingPairs > player2MatchingPairs {
+            return 1
+        } else if player2MatchingPairs > player1MatchingPairs {
+            return 2
+        }
+        return 3
     }
 }
