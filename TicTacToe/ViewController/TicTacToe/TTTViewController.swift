@@ -47,6 +47,8 @@ class TTTViewController: UIViewController {
             tag = sender?.tag
         }
         
+//        cellOnPress(tag: tag ?? 0)
+        
         switch tag {
         case 0: cellOnPress(tag: tag ?? 0)
         case 1: cellOnPress(tag: tag ?? 1)
@@ -77,7 +79,7 @@ class TTTViewController: UIViewController {
             
             // prompts the computer to make a move if computer is starting player
             if game.player2.isComputer && game.isPlayerTurn[1] {
-                timer = Timer.scheduledTimer(withTimeInterval: 1.2, repeats: false, block: autoPress(timer:))
+                timer = Timer.scheduledTimer(withTimeInterval: 1.0, repeats: false, block: autoPress(timer:))
             }
         }
     }

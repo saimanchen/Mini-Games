@@ -5,7 +5,6 @@ class TicTacToeGame {
     var player1: Player
     var player2: Player
     
-    
     init(player1: Player, player2: Player) {
         self.player1 = player1
         self.player2 = player2
@@ -16,7 +15,6 @@ class TicTacToeGame {
     var hasWon: Bool = false
     var isDraw = false
     
-    //
     var isButtonTapped: Array<Bool> = [false, false, false, false, false, false, false, false, false]
     
     var player1Array: Array<Int> = []
@@ -69,7 +67,7 @@ class TicTacToeGame {
         }
     }
     
-    func checkIfWon(playerArray: Array<Int>) -> Bool{
+    func checkIfWon(playerArray: Array<Int>) -> Bool {
         if playerArray.count < 3 {
             return false
         } else {
