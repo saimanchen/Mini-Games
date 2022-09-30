@@ -897,6 +897,9 @@
                                 <rect key="frame" x="284" y="455.66666666666669" width="51" height="31"/>
                                 <color key="onTintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <color key="thumbTintColor" red="0.36078432199999999" green="0.57254904510000004" blue="0.89803922179999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <connections>
+                                    <action selector="SwitchAction:" destination="nN4-X9-fV4" eventType="valueChanged" id="Lrr-dk-PDd"/>
+                                </connections>
                             </switch>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Play against computer" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Q7B-Lz-rSF">
                                 <rect key="frame" x="100" y="460.66666666666669" width="169" height="20.333333333333314"/>
@@ -954,6 +957,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="WpR-LT-Mr9"/>
                     <connections>
+                        <outlet property="switchComputer" destination="qvX-Mh-jah" id="y7K-JW-MEH"/>
                         <outlet property="tfPlayer1" destination="y4o-Nz-r6Q" id="N6r-ak-yYk"/>
                         <outlet property="tfPlayer2" destination="zLO-o2-yXB" id="lNd-he-T6G"/>
                     </connections>
