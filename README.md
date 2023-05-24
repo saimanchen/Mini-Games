@@ -9,6 +9,3 @@
 1. Download this project as zip and extract it
 2. Import it in XCode
 3. Start the active scheme (Play button)
-
-<h2>Project status</h2>
-Work in progress
